@@ -1,20 +1,17 @@
-# 🔢 Program Perkalian Matriks 5 x 5
+# Perkalian Matriks 5 x 5
 
-Program ini adalah implementasi sederhana dalam Python untuk melakukan **perkalian dua buah matriks berukuran 5 x 5**. Cocok digunakan sebagai latihan dasar dalam memahami operasi matriks pada pemrograman serta konsep komunikasi data.
-
----
-
-## 📌 Deskripsi Program
-
-- Matriks A dan Matriks B didefinisikan secara langsung (hardcoded) dalam kode.
-- Matriks A berisi angka acak buatan.
-- Matriks B seluruh elemennya bernilai 1.
-- Program menghitung hasil perkalian Matriks A × Matriks B dan menampilkannya dalam bentuk array 2 dimensi.
+Repositori ini dibuat untuk memenuhi tugas kuliah Bahasa Pemrograman II terkait implementasi sederhana dalam Python untuk melakukan **perkalian dua buah matriks berukuran 5 x 5**.
 
 ---
 
-## 🧾 Source Code Singkat
+## Deskripsi 
 
+Matriks `A` dan Matriks `B` didefinisikan secara langsung dalam kode, dan bisa juga mengisi elemen matriks satu per satu dengan `input()`. Perkalian dilakukan dengan tiga perulangan yaitu `for-loop`, Perhitungan dilakukan dengan menjumlahkan hasil kali antara elemen baris Matriks A dan kolom Matriks B. Hasil perkalian disimpan dalam matriks baru yaitu matriks `hasil` dan ditampilkan bersama A dan B.
+
+---
+
+## Source Code 
+- Elemen matriks A 
 ```python
 matriksA = [
     [1, 2, 3, 4, 5],
@@ -23,7 +20,9 @@ matriksA = [
     [6, 7, 8, 9, 0],
     [5, 4, 3, 2, 1]
 ]
-
+```
+- Elemen matriks B 
+```python
 matriksB = [
     [1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1],
@@ -31,8 +30,9 @@ matriksB = [
     [1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1]
 ]
-
-# Proses perkalian matriks
+```
+- Proses perkalian matriks `hasil`
+```python
 hasil = []
 for i in range(5):
     baris_hasil = []
@@ -42,3 +42,42 @@ for i in range(5):
             total += matriksA[i][k] * matriksB[k][j]
         baris_hasil.append(total)
     hasil.append(baris_hasil)
+```
+- Menampilkan matriks
+```python
+print("\nMatriks A:")
+for baris in matriksA:
+    print(baris)
+
+print("\nMatriks B:")
+for baris in matriksB:
+    print(baris)
+
+print("\nHasil Matriks A x B:")
+for baris in hasil:
+    print(baris)
+```
+
+### Perkalian Matriks Dengan Input User
+
+User juga bisa mengisi Elemen matriks A dan B satu per satu dengan menggunakan `input()`.
+```python
+matriksA = []
+matriksB = []
+
+print("\nMasukkan elemen Matriks A:")
+for i in range(5):
+    baris = []
+    for j in range(5):
+        elemen = int(input(f"Matriks 1 [{i+1}][{j+1}] = "))
+        baris.append(elemen)
+    matriksA.append(baris)
+
+print("\nMasukkan elemen Matriks B:")
+for i in range(5):
+    baris = []
+    for j in range(5):
+        elemen = int(input(f"Matriks 2 [{i+1}][{j+1}] = "))
+        baris.append(elemen)
+    matriksB.append(baris)  
+```
